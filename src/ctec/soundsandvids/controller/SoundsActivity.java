@@ -1,5 +1,7 @@
 package ctec.soundsandvids.controller;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -19,6 +21,7 @@ public class SoundsActivity extends Activity implements Runnable
 	private MediaPlayer soundPlayer;
 	private SeekBar soundSeekBar;
 	private Thread soundThread;
+	private ArrayList<Integer> songList;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -31,8 +34,10 @@ public class SoundsActivity extends Activity implements Runnable
 		stopButt = (Button) findViewById(R.id.stopButton);
 		vidButt = (Button) findViewById(R.id.videoButton);
 		soundSeekBar = (SeekBar) findViewById(R.id.soundSeekBar);
-		soundPlayer = MediaPlayer.create(this.getBaseContext(), R.raw.spirit_tracks);
+		soundPlayer = MediaPlayer.create(this.getBaseContext(), (int) (Math.random() * songList.size()));
+		songList = new ArrayList<Integer>();
 		
+		playSongs();
 		setupListeners();
 		
 		soundThread = new Thread(this);
@@ -40,6 +45,14 @@ public class SoundsActivity extends Activity implements Runnable
 		
 	}
 	
+	private void playSongs()
+	{
+		songList.add(R.raw.spirit_tracks);
+		songList.add(R.raw.);
+		songList.add(R.raw.);
+		
+	}
+
 	private void setupListeners()
 	{
 		startButt.setOnClickListener(new View.OnClickListener()
@@ -71,7 +84,7 @@ public class SoundsActivity extends Activity implements Runnable
 			public void onClick(View v)
 			{
 				soundPlayer.stop();
-				soundPlayer = MediaPlayer.create(getBaseContext(), R.raw.spirit_tracks);
+				soundPlayer = MediaPlayer.create(getBaseContext(), (int) (Math.random() * songList.size()));
 				
 			}
 		});
