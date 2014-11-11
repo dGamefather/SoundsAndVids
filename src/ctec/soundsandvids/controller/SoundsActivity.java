@@ -48,8 +48,8 @@ public class SoundsActivity extends Activity implements Runnable
 	private void playSongs()
 	{
 		songList.add(R.raw.spirit_tracks);
-		songList.add(R.raw.);
-		songList.add(R.raw.);
+		songList.add(R.raw.aiur_child);
+		songList.add(R.raw.mega_man);
 		
 	}
 

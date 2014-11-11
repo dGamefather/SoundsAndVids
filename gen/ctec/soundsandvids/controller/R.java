@@ -1196,8 +1196,10 @@ containing a value of this type.
         public static final int support_simple_spinner_dropdown_item=0x7f03001a;
     }
     public static final class raw {
-        public static final int sawyer_annoy=0x7f050000;
-        public static final int spirit_tracks=0x7f050001;
+        public static final int aiur_child=0x7f050000;
+        public static final int mega_man=0x7f050001;
+        public static final int sawyer_annoy=0x7f050002;
+        public static final int spirit_tracks=0x7f050003;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
